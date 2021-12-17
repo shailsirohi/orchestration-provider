@@ -14,21 +14,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// Package apis contains Kubernetes API for the Template provider.
+// Package apis contains Kubernetes API for the Orchestration provider.
 package apis
 
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	samplev1alpha1 "github.com/crossplane/provider-template/apis/sample/v1alpha1"
-	templatev1alpha1 "github.com/crossplane/provider-template/apis/v1alpha1"
+	environmentv1alpha1 "github.com/shailsirohi/orchestration-provider/apis/environment/v1alpha1"
+	orchestrationv1alpha1 "github.com/shailsirohi/orchestration-provider/apis/v1alpha1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
-		templatev1alpha1.SchemeBuilder.AddToScheme,
-		samplev1alpha1.SchemeBuilder.AddToScheme,
+		orchestrationv1alpha1.SchemeBuilder.AddToScheme,
+		environmentv1alpha1.SchemeBuilder.AddToScheme,
 	)
 }
 

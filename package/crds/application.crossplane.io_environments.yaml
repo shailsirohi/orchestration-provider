@@ -6,7 +6,7 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: mytypes.sample.template.crossplane.io
+  name: environments.sample.template.crossplane.io
 spec:
   group: sample.template.crossplane.io
   names:
@@ -14,10 +14,10 @@ spec:
     - crossplane
     - managed
     - template
-    kind: MyType
-    listKind: MyTypeList
-    plural: mytypes
-    singular: mytype
+    kind: Environment
+    listKind: EnvironmentList
+    plural: environments
+    singular: environment
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -51,7 +51,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: A MyTypeSpec defines the desired state of a MyType.
+            description: An EnvironmentSpec defines the desired state of an Environment.
             properties:
               deletionPolicy:
                 default: Delete
@@ -63,7 +63,7 @@ spec:
                 - Delete
                 type: string
               forProvider:
-                description: MyTypeParameters are the configurable fields of a MyType.
+                description: MyTypeParameters are the configurable fields of an Environment.
                 properties:
                   configurableField:
                     type: string
@@ -115,10 +115,10 @@ spec:
             - forProvider
             type: object
           status:
-            description: A MyTypeStatus represents the observed state of a MyType.
+            description: A MyTypeStatus represents the observed state of an Environment.
             properties:
               atProvider:
-                description: MyTypeObservation are the observable fields of a MyType.
+                description: MyTypeObservation are the observable fields of an Environment
                 properties:
                   observableField:
                     type: string
