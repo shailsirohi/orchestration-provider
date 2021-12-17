@@ -20,8 +20,8 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	environmentv1alpha1 "github.com/shailsirohi/orchestration-provider/apis/environment/v1alpha1"
-	orchestrationv1alpha1 "github.com/shailsirohi/orchestration-provider/apis/v1alpha1"
+	environmentv1alpha1 "orchestration-provider/apis/application/v1alpha1"
+	orchestrationv1alpha1 "orchestration-provider/apis/v1alpha1"
 )
 
 func init() {

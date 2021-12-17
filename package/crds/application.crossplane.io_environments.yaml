@@ -17,7 +17,7 @@ spec:
     kind: Environment
     listKind: EnvironmentList
     plural: environments
-    singular: environment
+    singular: application
   scope: Cluster
   versions:
   - additionalPrinterColumns:
