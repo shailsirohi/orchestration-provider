@@ -4,9 +4,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: environments.sample.template.crossplane.io
+  name: environments.application.orchestrator.crossplane.io
 spec:
-  group: sample.template.crossplane.io
+  group: application.orchestrator.crossplane.io
   names:
     categories:
     - crossplane
