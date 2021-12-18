@@ -1,4 +1,4 @@
-/*
+	/*
 Copyright 2020 The Crossplane Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,21 +16,20 @@ limitations under the License.
 
 package v1alpha1
 
-import (
-	"reflect"
-	"time"
+	import (
+		metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+		"k8s.io/apimachinery/pkg/runtime/schema"
+		"k8s.io/apimachinery/pkg/types"
+		"reflect"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-
-	xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
-)
+		xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
+	)
 
 // EnvironmentParameters are the configurable fields of an Environment.
 type EnvironmentParameters struct {
 	ApplicationName string `json:"applicationName"`
 	EnvironmentType string `json:"environmentType"`
-	ExpirationTime time.Time `json:"expirationTime,omitempty"`
+	ExpirationTime metav1.Time `json:"expirationTime,omitempty"`
 	Owner string `json:"owner"`
 }
 
@@ -40,9 +39,11 @@ type EnvironmentObservation struct {
 }
 
 type EnvironmentInstance struct {
-	InstanceName string `json:"instanceName"`
-	InstanceGroup string `json:"instanceGroup"`
-	InstanceKind string `json:"instanceKind"`
+	Name string `json:"name"`
+	Group string `json:"group"`
+	Kind string `json:"kind"`
+	APIVersion string `json:"apiVersion"`
+	UID types.UID `json:"uid,omitempty"`
 	Status bool `json:"status"`
 }
 

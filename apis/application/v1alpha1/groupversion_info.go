@@ -27,7 +27,7 @@ import (
 
 // Package type metadata.
 const (
-	Group   = "application.orchestration.crossplane.io"
+	Group   = "application.orchestrator.crossplane.io"
 	Version = "v1alpha1"
 )
 

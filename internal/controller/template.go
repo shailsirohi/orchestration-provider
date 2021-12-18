@@ -18,12 +18,13 @@ package controller
 
 import (
 	"k8s.io/client-go/util/workqueue"
+	"orchestration-provider/internal/controller/config"
+	"orchestration-provider/internal/controller/environment"
 	ctrl "sigs.k8s.io/controller-runtime"
 
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 
-	"github.com/crossplane/provider-template/internal/controller/config"
-	"github.com/crossplane/provider-template/internal/controller/mytype"
+
 )
 
 // Setup creates all Template controllers with the supplied logger and adds them to
@@ -31,7 +32,7 @@ import (
 func Setup(mgr ctrl.Manager, l logging.Logger, wl workqueue.RateLimiter) error {
 	for _, setup := range []func(ctrl.Manager, logging.Logger, workqueue.RateLimiter) error{
 		config.Setup,
-		mytype.Setup,
+		environment.Setup,
 	} {
 		if err := setup(mgr, l, wl); err != nil {
 			return err
