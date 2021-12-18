@@ -1,0 +1,11 @@
+apiVersion: application.orchestrator.crossplane.io/v1alpha1
+kind: Environment
+metadata:
+  name: example
+spec:
+  forProvider:
+    applicationName: sampleapp
+    environmentType: dev
+    owner: orch
+  providerConfigRef:
+    name: example

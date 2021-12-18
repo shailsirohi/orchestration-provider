@@ -17,6 +17,7 @@ limitations under the License.
 package main
 
 import (
+	"orchestration-provider/internal/controller"
 	"os"
 	"path/filepath"
 
@@ -28,7 +29,6 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/ratelimiter"
 
 	"github.com/crossplane/provider-template/apis"
-	"github.com/crossplane/provider-template/internal/controller"
 )
 
 func main() {
