@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// Package v1alpha1 contains the v1alpha1 group Sample resources of the Template provider.
+// Package v1alpha1 contains the v1alpha1 group Sample resources of the Orchestration provider.
 // +kubebuilder:object:generate=true
 // +groupName=application.orchestrator.crossplane.io
 // +versionName=v1alpha1

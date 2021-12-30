@@ -27,7 +27,8 @@ package v1alpha1
 
 // EnvironmentParameters are the configurable fields of an Environment.
 type EnvironmentParameters struct {
-	ApplicationName string `json:"applicationName"`
+	ApplicationName string `json:"applicationName,omitempty"`
+	TenantName string `json:"tenantName,omitempty"`
 	EnvironmentType string `json:"environmentType"`
 	ExpirationTime metav1.Time `json:"expirationTime,omitempty"`
 	Owner string `json:"owner"`
@@ -35,12 +36,12 @@ type EnvironmentParameters struct {
 
 // EnvironmentObservation are the observable fields of an Environment.
 type EnvironmentObservation struct {
-	Instances []EnvironmentInstance `json:"instances,omitempty"`
+	Instances []EnvironmentXRC `json:"instances,omitempty"`
+
 }
 
-type EnvironmentInstance struct {
+type EnvironmentXRC struct {
 	Name string `json:"name"`
-	Group string `json:"group"`
 	Kind string `json:"kind"`
 	APIVersion string `json:"apiVersion"`
 	UID types.UID `json:"uid,omitempty"`
@@ -67,7 +68,7 @@ type EnvironmentStatus struct {
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,template}
+// +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,orchestrator}
 type Environment struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
